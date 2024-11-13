@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4.2</title>
+</head>
+<body>
+
+    <script>
+        // Створення одновимірного масиву з 15 випадкових чисел
+        let arr = [];
+        for (let i = 0; i < 15; i++) {
+            arr[i] = Math.floor(Math.random() * 100); // випадкове число від 0 до 99
+        }
+        document.write("Початковий масив: " + arr.join(" ") + "<br>");
+
+        // Пошук мінімального елемента без використання вбудованих функцій
+        let minIndex = 0;
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] < arr[minIndex]) {
+                minIndex = i;
+            }
+        }
+
+        // Заміна мінімального елемента на суму першого та останнього елементів
+        arr[minIndex] = arr[0] + arr[arr.length - 1];
+        document.write("Масив після заміни мінімального елемента: " + arr.join(" "));
+    </script>
+
+</body>
+</html>
